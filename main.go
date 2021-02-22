@@ -54,8 +54,8 @@ func main() {
 	log.Infof("Creating job client for namespace: %s", namespace)
 	jobs := clientset.BatchV1().Jobs(namespace)
 
-	log.Infof("Setting up watch for successful jobs in namespace: %s", namespace)
-	w, err := clientset.BatchV1().Jobs(namespace).Watch(ctx, metav1.ListOptions{
+	log.Info("Setting up watch for successful jobs")
+	w, err := jobs.Watch(ctx, metav1.ListOptions{
 		FieldSelector: "status.successful=1",
 	})
 	if err != nil {
