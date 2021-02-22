@@ -44,7 +44,7 @@ spec:
     spec:
       containers:
       - name: jobless
-        image: public.ecr.aws/l7t2e6a6/jobless:0.0.4
+        image: public.ecr.aws/l7t2e6a6/jobless:0.1.0
         resources:
           limits:
             memory: "64Mi"
